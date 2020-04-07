@@ -1,0 +1,116 @@
+<style>
+    .navbar{
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+    .navbar li{
+        font-size: 16px;
+    }
+    .dropdown-menu{
+        background-color: #f4f4f4;
+        font-size: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+/*        box-shadow: 1px 1px 0.5px grey;*/
+/*        margin-bottom: 0;*/
+
+    }
+    .dropdown-menu li{
+        padding-bottom: 3px;
+    }
+    .dropdown-menu li a:hover{
+        background-color: white;
+    }
+</style>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">GAK</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+        {% if session.login %}
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">PDF
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">CSE</a></li>
+                    <li><a href="#">ECE</a></li>
+                    <li><a href="#">EEE</a></li>
+                    <li><a href="#">ME</a></li>
+                    <li><a href="#">CE</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">English
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Comprehensive passage</a></li>
+                    <li><a href="#">Active & Passive</a></li>
+                    <li><a href="#">Correction of sentence</a></li>
+                    <li><a href="#">Synonyms</a></li>
+                    <li><a href="#">Antonyms</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quiz
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Aptitude</a></li>
+                    <li><a href="#">Reasoning</a></li>
+                    <li><a href="#">Mock Test</a></li>
+                    <li><a href="#">General Delay Test</a></li>
+                    <li><a href="#">Branch</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Business News</a></li>
+                    <li><a href="#">Placement News</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Blog</a>
+            </li>
+            <li>
+                <a href="">CRT</a>
+            </li>
+            <li>
+                <a href="">Company</a>
+            </li>
+            <li>
+                <a href="">Contact us</a>
+            </li>
+
+        {% endif %}
+        <li><a href="/about">About</a></li>
+
+    </ul>
+
+
+
+    <ul class="nav navbar-nav navbar-right">
+        {% if session.login %}
+            <li>
+                <a href="/logout/">Logout</a>
+<!--                <sub style="color: white;">from {{session['firstName']}}</sub>-->
+            </li>
+        {% else %}
+            <li>
+                <a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li>
+                <a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% endif %}
+    </ul>
+      </div>
+  </div>
+</nav>

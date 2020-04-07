@@ -1,0 +1,220 @@
+{% extends 'layout.html' %}
+    {% block sub_content %}
+<style>
+    .container{
+/*    height: 1090px;*/
+/*    margin-top: 120px;*/
+    padding-top: 20px;
+}
+/*index container*/
+
+.QuizBG{
+    top: 0;
+    margin-top: 0px auto;
+    height: 592px;
+    width:auto;
+    background-image: url({{ url_for('static', filename='home/COMM.png') }});
+    background-color: #00aea5;
+    background-repeat: no-repeat;
+    padding-top: 88px;
+    background-position: center;
+    box-shadow: 2px 2px 2px 2px;
+    opacity: 1;
+}
+h1{
+/*    font-size: 50px;*/
+}
+.FimageLinks1{
+    text-decoration: none;
+    color:cornflowerblue;
+    font-size: 18px;
+}
+.FimageLinks1:hover{
+    animation-name: linkGlow1;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes linkGlow{
+    from{opacity: 0.7}
+    to{opacity: 1;font-size: 20px;color:mediumslateblue;text-decoration: underline;animation-play-state: running}
+}
+.QuizBG1{
+    background-image: url({{ url_for('static', filename='home/Quizimage.png') }});
+    background-repeat: no-repeat;
+    background-color: #ffc80b;
+    height: 592px;
+    width:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 10px;
+    margin-top: 15px;
+    box-shadow: 2px 2px 2px 2px;
+}
+.FimageLinks{
+    text-align: center;
+    padding-top:140px;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 70px;
+    margin-right: 200px;
+}
+.FimageLinks:hover{
+    animation-name: linkGlow;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes linkGlow1{
+    from{opacity: 0.7}
+    to{opacity: 1;color:blue;text-decoration: underline;animation-play-state: running}
+}
+.QuizBG2{
+    background-color: white;
+    margin-top: 15px;
+    height: 592px;
+    width:auto;
+    background-repeat:no-repeat;
+    background-image: url({{ url_for('static', filename='home/NEWSNEWIMAGE.png')}});
+    padding-top: 6px;
+    background-position: center;
+    box-shadow: 2px 2px 2px 2px;
+}
+.QuizBG2 h1{
+    padding-top: 10px;
+}
+.FimageLinks2{
+    text-decoration: none;
+    text-align: center;
+    padding-top:10px;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.FimageLinks2:hover{
+    animation-name: linkGlow2;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes linkGlow2{
+    from{opacity: 0.7}
+    to{
+        opacity: 1;
+        color: firebrick;
+        text-decoration: underline;
+    }
+}
+
+.Twoimg{
+    height: 592px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#LeftImg{
+    margin-left:0px;
+    float: left;
+    height: 592px;
+/*    height: auto;*/
+    width: 48%;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-height: 592px;
+/*    height: auto;*/
+    background-position: center;
+    background-image: url({{ url_for('static', filename='home/booksimage.png')}});
+/*    padding: 0px 10px 0px 10px;*/
+    text-emphasis-position: below;
+    box-shadow: 2px 2px 2px 2px;
+}
+#rightImg{
+    float: right;
+    margin-left: auto;
+    margin-right: 0px;
+    background-image: url({{ url_for('static', filename='home/companyimage.png')}});
+    height: 592px;
+    width: 48%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 2px 2px 2px 2px;
+
+/*    */
+
+    text-align: center;
+}
+pre{
+    padding-top: 320px;
+    padding-bottom: 0px;
+    text-decoration: none;
+    font-family: serif;
+
+}
+pre h1{
+/*    padding: 320px;*/
+}
+.FimageLinks3{
+    color: black;
+}
+.FimageLinks3:hover{
+    color: black;
+    animation-name: lineGlowleft;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes lineGlowleft{
+    from{opacity: 0.7}
+    to{opacity: 1;color:limegreen;text-decoration: underline;}
+}
+.FimageLinks4{
+    color:forestgreen;
+}
+.FimageLinks4:hover{
+    color: forestgreen;
+    animation-name: lineGlowright;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes lineGlowright{
+    from{opacity: 0.7}
+    to{opacity: 1;color:white;text-decoration: underline;}
+}
+
+    .indexFooter{
+    height: 100px;
+    background-color: black;
+}
+</style>
+        <div class="container">
+             <div class="QuizBG" align="center"><br>
+            <a href="" class="FimageLinks"><h3>Learn more ></h3></a>
+        </div>
+        <div class="QuizBG1" align="center">
+            <h1>Test your skills(Quiz)</h1>
+            <a href="" class="FimageLinks1"><h3>Learn more ></h3></a>
+        </div>
+        <div class="QuizBG2" align="center">
+            <h1>Daily News</h1>
+            <a href="" class="FimageLinks2"><h3>Learn more ></h3></a>
+        </div>
+        <div class="Twoimg">
+            <div id="LeftImg">
+<!--                <pre>-->
+                <h1>PDF's</h1>
+                <a href="" class="FimageLinks3"><h3>Learn more ></h3></a>
+<!--                </pre>-->
+            </div>
+            <div id="rightImg">
+<!--                <pre>-->
+                <h1>Company</h1>
+                <a href="" class="FimageLinks4"><h3>Learn more ></h3></a>
+<!--                </pre>-->
+            </div>
+        </div>
+        </div>
+        <hr>
+    <footer class="indexFooter">
+        <p style="color: white;padding-top: 30px;" align="center">Copyrights&copy; 2020 GAK<span>|</span> Designed by GAK</p>
+    </footer>
+    {% endblock %}
