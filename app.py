@@ -8,7 +8,7 @@ import psycopg2 #
 # import psycopg2_binary #
 
 
-engine = create_engine('postgresql://postgres:saisanju525@localhost/GAK')
+engine = create_engine('postgres://zxfdnzvyrrwmpy:86c26a4f57b0edf1e3909c4e73b69778f079ad66663a290c26eab1e4d91c649f@ec2-54-159-112-44.compute-1.amazonaws.com:5432/d8mm5gghspjd2h')
 connection = engine.raw_connection()
 
 app=Flask(__name__)
