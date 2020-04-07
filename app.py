@@ -123,13 +123,13 @@ def login():
             flash('User not found', 'danger')
             return render_template('login.html')
         # cur.close()
-        session['login'] = True # new change 1
+        session['login'] = True # new change 0
         return redirect('/')
     return render_template('login.html')
 
 @app.route('/logout/')
 def logout():
-    session.clear()
+    session['login'] = False # new change 1 
     flash("You have been logged out", 'info')
     return redirect('/')
 
