@@ -97,40 +97,27 @@ def login():
     if request.method == 'POST':
         userDetails = request.form
         username = userDetails['username']
-#         cur = db_cursor
-        # resultValue = cur.execute("SELECT * FROM user WHERE username = %s", ([username]))
-        # resultValue=db.session.query(GAK).filter(GAK.username == username ).count();
-        # CheckPAssword=db_cursor.execute("SELECT * FROM user WHERE username = %s",([username]))
-        # cur.execute("use GAK;")
-        # CheckPAssword=cur.execute("SELECT password FROM public.user WHERE username='sanju5';")
         CheckUser = GAK.query.filter_by(username=username).first()
-        print(CheckUser.username) #return value in none ------------------------------ for the above cmd????????????
 
         if CheckUser is not None:
-            # user = cur.fetchone()
-
             if CheckUser.password == userDetails['password']:
                 session['login'] = True
                 session['firstName'] = CheckUser.first_name
                 session['lastName'] = CheckUser.last_name
                 flash('Welcome ' + session['firstName'] +'! You have been successfully logged in', 'success')
-#                 return redirect('/') # new change 2 regret
             else:
-#                 cur.close()
+                cur.close()
                 flash('Password does not match', 'danger')
                 return render_template('login.html')
         else:
-            # cur.close()
             flash('User not found', 'danger')
             return render_template('login.html')
-        # cur.close()
-#         session['login'] = True # new change 0 regret
         return redirect('/')
     return render_template('login.html')
 
 @app.route('/logout/')
 def logout():
-    session.clear() # new change 1  regret
+    session.clear()
     flash("You have been logged out", 'info')
     return redirect('/')
 
