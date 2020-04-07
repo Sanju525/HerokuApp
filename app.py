@@ -29,11 +29,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Database creds
-db_host = "localhost"
+db_host = "ec2-34-193-232-231.compute-1.amazonaws.com"
 db_port = "5432" #default postgres port
-db_dbname = "GAK"
-db_user = "postgres"
-db_pw = "saisanju525"
+db_dbname = "d6if029a7f5jq1"
+db_user = "vxxbdtrfdbkduh"
+db_pw = "55e6734be234734b9b746119746f69783826128cc99af69b7da1beb94a871534"
 db_conn = psycopg2.connect(host=db_host, port=db_port, dbname=db_dbname, user=db_user, password=db_pw)
 db_cursor = db_conn.cursor()
 
