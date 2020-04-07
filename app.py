@@ -97,7 +97,7 @@ def login():
     if request.method == 'POST':
         userDetails = request.form
         username = userDetails['username']
-        cur = db_cursor
+#         cur = db_cursor
         # resultValue = cur.execute("SELECT * FROM user WHERE username = %s", ([username]))
         # resultValue=db.session.query(GAK).filter(GAK.username == username ).count();
         # CheckPAssword=db_cursor.execute("SELECT * FROM user WHERE username = %s",([username]))
@@ -114,9 +114,9 @@ def login():
                 session['firstName'] = CheckUser.first_name
                 session['lastName'] = CheckUser.last_name
                 flash('Welcome ' + session['firstName'] +'! You have been successfully logged in', 'success')
-                return redirect('/') # new change 2
+#                 return redirect('/') # new change 2 regret
             else:
-                cur.close()
+#                 cur.close()
                 flash('Password does not match', 'danger')
                 return render_template('login.html')
         else:
@@ -124,13 +124,13 @@ def login():
             flash('User not found', 'danger')
             return render_template('login.html')
         # cur.close()
-#         session['login'] = True # new change 0
-#         return redirect('/')
+#         session['login'] = True # new change 0 regret
+        return redirect('/')
     return render_template('login.html')
 
 @app.route('/logout/')
 def logout():
-    session['login'] = False # new change 1 
+    session.clear() # new change 1  regret
     flash("You have been logged out", 'info')
     return redirect('/')
 
