@@ -7,7 +7,7 @@ import os
 import psycopg2 #
 # import psycopg2_binary #
 
-session['login'] = False
+# session['login'] = False
 
 engine = create_engine('postgres://vxxbdtrfdbkduh:55e6734be234734b9b746119746f69783826128cc99af69b7da1beb94a871534@ec2-34-193-232-231.compute-1.amazonaws.com:5432/d6if029a7f5jq1')
 connection = engine.raw_connection()
