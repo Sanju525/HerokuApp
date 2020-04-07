@@ -123,6 +123,7 @@ def login():
             flash('User not found', 'danger')
             return render_template('login.html')
         # cur.close()
+        session['login'] = True # new change 1
         return redirect('/')
     return render_template('login.html')
 
