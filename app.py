@@ -82,7 +82,7 @@ def register():
         db.session.add(user_data)
         db.session.commit()
         flash('Registration successful! Please login.', 'success')
-        return redirect('/login')
+        return redirect('/login/')
     return render_template('register.html')
 
 @app.route('/login/', methods=['GET', 'POST'])
@@ -105,7 +105,7 @@ def login():
         else:
             flash('User not found', 'danger')
             return render_template('login.html')
-        return redirect('/')
+        return redirect('/about/')
     return render_template('login.html')
 
 @app.route('/logout/')
