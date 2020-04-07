@@ -8,7 +8,7 @@ import psycopg2 #
 # import psycopg2_binary #
 
 
-engine = create_engine('postgres://zxfdnzvyrrwmpy:86c26a4f57b0edf1e3909c4e73b69778f079ad66663a290c26eab1e4d91c649f@ec2-54-159-112-44.compute-1.amazonaws.com:5432/d8mm5gghspjd2h')
+engine = create_engine('postgres://vxxbdtrfdbkduh:55e6734be234734b9b746119746f69783826128cc99af69b7da1beb94a871534@ec2-34-193-232-231.compute-1.amazonaws.com:5432/d6if029a7f5jq1')
 connection = engine.raw_connection()
 
 app=Flask(__name__)
@@ -23,7 +23,7 @@ if ENV == 'dev':
 
 else:
     app.debug=False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zxfdnzvyrrwmpy:86c26a4f57b0edf1e3909c4e73b69778f079ad66663a290c26eab1e4d91c649f@ec2-54-159-112-44.compute-1.amazonaws.com:5432/d8mm5gghspjd2h'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://vxxbdtrfdbkduh:55e6734be234734b9b746119746f69783826128cc99af69b7da1beb94a871534@ec2-34-193-232-231.compute-1.amazonaws.com:5432/d6if029a7f5jq1'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
