@@ -55,9 +55,8 @@ def __init__(self, first_name, last_name, username, email, password):
     self.email = email
     self.password = password
 
-
-
 app.config['SECRET_KEY'] = os.urandom(24)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -73,13 +72,6 @@ def register():
         if userDetails['password'] != userDetails['confirm_password']:
             flash('Passwords do not match! Try again.', 'danger')
             return render_template('register.html')
-        # cur = mysql.connection.cursor()
-        # cur.execute("INSERT INTO user(first_name, last_name, username, email, password) "\
-        # "VALUES(%s,%s,%s,%s,%s)",(userDetails['first_name'], userDetails['last_name'], \
-        # userDetails['username'], userDetails['email'], userDetails['password']))
-
-        # mysql.connection.commit()
-        # cur.close()
         first_name=request.form['first_name']
         last_name=request.form['last_name']
         username=request.form['username']
@@ -121,6 +113,3 @@ def logout():
     flash("You have been logged out", 'info')
     return redirect('/')
 
-if __name__ == '__main__':
-    # app.debug = True
-    app.run();
