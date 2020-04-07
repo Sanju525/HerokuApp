@@ -36,8 +36,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
 
-        {% if session['login'] %}
-            {% for True in session['login'] %}
+        {% while session['login'] %}
             <li class="active"><a href="/">Home</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">PDF
@@ -93,8 +92,7 @@
                 <a href="#">Contact us</a>
             </li>
         <li><a href="/about/">About</a></li>
-        {% endfor %}
-        {% endif %}
+        {% endwhile %}
 
     </ul>
 
