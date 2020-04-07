@@ -114,6 +114,7 @@ def login():
                 session['firstName'] = CheckUser.first_name
                 session['lastName'] = CheckUser.last_name
                 flash('Welcome ' + session['firstName'] +'! You have been successfully logged in', 'success')
+                return redirect('/') # new change 2
             else:
                 cur.close()
                 flash('Password does not match', 'danger')
@@ -123,8 +124,8 @@ def login():
             flash('User not found', 'danger')
             return render_template('login.html')
         # cur.close()
-        session['login'] = True # new change 0
-        return redirect('/')
+#         session['login'] = True # new change 0
+#         return redirect('/')
     return render_template('login.html')
 
 @app.route('/logout/')
